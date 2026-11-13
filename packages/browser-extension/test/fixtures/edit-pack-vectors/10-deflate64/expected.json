@@ -1,0 +1,5 @@
+{
+ "file": "explorer-large.zip",
+ "refusal": "pack-deflate64",
+ "message_contains": "Re-zip with 7-Zip"
+}

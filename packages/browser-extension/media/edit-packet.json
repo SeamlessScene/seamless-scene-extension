@@ -1,0 +1,112 @@
+{
+  "packet_schema_version": "1.0.0",
+  "packet_id": "packet_fixture_001",
+  "purpose": "local-research",
+  "manifest": {
+    "schema_version": "1.0.0",
+    "edit_id": "edit_fixture_001",
+    "manifest_version": 2,
+    "status": "released",
+    "source": {
+      "service": "cleared-fixture",
+      "territory": "fixture",
+      "service_content_id": "fixture-episode-001",
+      "title": "Cleared Fixture Episode",
+      "season": 1,
+      "episode": 1,
+      "expected_runtime_ms": 20000,
+      "runtime_tolerance_ms": 50,
+      "service_tier": "fixture",
+      "version_tag": "fixture-native-v1"
+    },
+    "compatibility": {
+      "min_adapter_version": "0.1.0",
+      "max_adapter_version": "0.x",
+      "verified_at": "2026-08-25T00:00:00.000Z"
+    },
+    "segments": [
+      {
+        "segment_id": "fixture-replacement-001",
+        "action": "REPLACE",
+        "trigger_time_ms": 3000,
+        "resume_time_ms": 8000,
+        "asset": {
+          "sha256": "7bf794f50cc86596de9eed7d9a691a16bafa917f346daf68d5a7743df055eb9d",
+          "expected_duration_ms": 5000,
+          "container": "video/mp4",
+          "video_codec": "avc1",
+          "audio_codec": "mp4a",
+          "width": 1280,
+          "height": 720,
+          "dynamic_range": "sdr"
+        },
+        "transition": { "type": "hard_cut" },
+        "failure_policy": "continue_native"
+      },
+      {
+        "segment_id": "fixture-insert-001",
+        "action": "INSERT",
+        "trigger_time_ms": 10000,
+        "resume_time_ms": 10000,
+        "asset": {
+          "sha256": "7bf794f50cc86596de9eed7d9a691a16bafa917f346daf68d5a7743df055eb9d",
+          "expected_duration_ms": 5000,
+          "container": "video/mp4",
+          "video_codec": "avc1",
+          "audio_codec": "mp4a",
+          "width": 1280,
+          "height": 720,
+          "dynamic_range": "sdr"
+        },
+        "transition": { "type": "hard_cut" },
+        "failure_policy": "continue_native"
+      },
+      {
+        "segment_id": "fixture-mute-001",
+        "action": "MUTE",
+        "trigger_time_ms": 12000,
+        "resume_time_ms": 14000,
+        "asset": null,
+        "transition": { "type": "hard_cut" },
+        "failure_policy": "continue_native"
+      },
+      {
+        "segment_id": "fixture-skip-001",
+        "action": "SKIP",
+        "trigger_time_ms": 15000,
+        "resume_time_ms": 17000,
+        "asset": null,
+        "transition": { "type": "hard_cut" },
+        "failure_policy": "continue_native"
+      }
+    ],
+    "feature_flags": {
+      "replace_enabled": true,
+      "insert_enabled": true,
+      "skip_enabled": true,
+      "mute_enabled": true,
+      "emergency_disable": false
+    },
+    "content": {
+      "spoilers": true,
+      "warnings": [],
+      "synthetic_media": true,
+      "real_person_likeness": false
+    },
+    "rights": {
+      "classification": "cleared-test",
+      "approval_reference": "fixture-clearance-001"
+    },
+    "signature": {
+      "algorithm": "Ed25519",
+      "key_id": "fixture-manifest-key-2026-01",
+      "value": "smU3YJxz+iXrF9oxJnzFRlaRz8CRRbsS5hJH5CuAW96RENqJGoszdoriEu3HnqTs8ZQ3j3Y1pjS5RTgLiILYAQ=="
+    }
+  },
+  "asset_bindings": [
+    {
+      "sha256": "7bf794f50cc86596de9eed7d9a691a16bafa917f346daf68d5a7743df055eb9d",
+      "relative_path": "replacement.mp4"
+    }
+  ]
+}

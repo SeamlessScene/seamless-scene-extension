@@ -1,0 +1,34 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://scene-substitution.invalid/schemas/catalog-packet-v2.schema.json",
+  "title": "Signed catalog distribution packet v2",
+  "description": "Both signatures are required. Runtime validation additionally enforces capability negotiation, signature trust, exact hash bindings, portable case-unique paths, aggregate bytes, action semantics and source compatibility.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["packet_schema_version", "packet_id", "purpose", "creative_edit_id", "source_variant_id", "media_profile", "required_client_version", "manifest", "asset_bindings", "signature"],
+  "properties": {
+    "packet_schema_version": { "const": "2.0.0" },
+    "packet_id": { "$ref": "#/$defs/uuid" },
+    "purpose": { "const": "catalog-distribution" },
+    "creative_edit_id": { "$ref": "#/$defs/uuid" },
+    "source_variant_id": { "$ref": "#/$defs/uuid" },
+    "media_profile": { "const": "catalog-av-v2" },
+    "required_client_version": { "type": "string", "maxLength": 32, "pattern": "^(0|[1-9]\\d*)\\.(0|[1-9]\\d*)\\.(0|[1-9]\\d*)$" },
+    "manifest": { "$ref": "manifest-v2.schema.json" },
+    "asset_bindings": {
+      "type": "array", "maxItems": 200,
+      "items": {
+        "type": "object", "additionalProperties": false, "required": ["sha256", "relative_path", "bytes"],
+        "properties": {
+          "sha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+          "relative_path": { "type": "string", "maxLength": 256, "pattern": "^[A-Za-z0-9][A-Za-z0-9._-]*(/[A-Za-z0-9][A-Za-z0-9._-]*)*\\.mp4$" },
+          "bytes": { "type": "integer", "minimum": 1, "maximum": 250000000 }
+        }
+      }
+    },
+    "signature": { "$ref": "manifest-v2.schema.json#/$defs/signature" }
+  },
+  "$defs": {
+    "uuid": { "type": "string", "pattern": "^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$" }
+  }
+}

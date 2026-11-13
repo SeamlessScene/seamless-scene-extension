@@ -1,0 +1,378 @@
+{
+  "format": 1,
+  "privateOnly": true,
+  "fixtureTrustIncluded": false,
+  "builder": {
+    "esbuild": "0.28.2"
+  },
+  "inputs": [
+    {
+      "path": "extension/src/asset-duration-policy.mjs",
+      "sha256": "88c32dba4b7f9288a58da06e63114477b35624852b84804c8e170596433800ec"
+    },
+    {
+      "path": "extension/src/build-identity.mjs",
+      "sha256": "88faf1cb9289f0d968b55b33aff7cdd17f14704ab5aa4dadc57f21e9e29fac6a"
+    },
+    {
+      "path": "extension/src/catalog-activation-store.mjs",
+      "sha256": "9419e7d93e4699028acd720b65295c1b4d670f4ff883e7ddeba3ea150b683484"
+    },
+    {
+      "path": "extension/src/catalog-control-updates.mjs",
+      "sha256": "e2745982c5e053f3985e0ea64c9a676cbabe56149278eb9fb0d3924469f6ddeb"
+    },
+    {
+      "path": "extension/src/catalog-file-import.mjs",
+      "sha256": "722a1312e76659cda10e3685a6ff1339984ccff767d9efe4953d311812b1faa3"
+    },
+    {
+      "path": "extension/src/catalog-packet.mjs",
+      "sha256": "1632460594ec8e038db57f597eb8fe85e02d32c0d3f8909d3619b49394b710d1"
+    },
+    {
+      "path": "extension/src/catalog-playback-session.mjs",
+      "sha256": "e730ac9ebd622d897bc545f6d8fc47c6fb7742fa5faaf8e5a9b9c34f18bd1802"
+    },
+    {
+      "path": "extension/src/device-credentials.mjs",
+      "sha256": "d8974abf0fe172b477c219053e1f92931f2036523fd50cff618ce838afd6770b"
+    },
+    {
+      "path": "extension/src/device-link-client.mjs",
+      "sha256": "8b6e25dedb57d6251b9eef377213590f23718a67d90a9cd521a1c7799011181a"
+    },
+    {
+      "path": "extension/src/local-asset-validator.mjs",
+      "sha256": "895c19549c2b8be50f36f702a5714f765ad736132d97d3f090a473775e790b02"
+    },
+    {
+      "path": "extension/src/local-file-hash.mjs",
+      "sha256": "3d10cd903c5750f2bbda376dbc3c5e8272b8e81b3521cbba5f1c0ff6d10ac192"
+    },
+    {
+      "path": "extension/src/manifest-action-scheduler.mjs",
+      "sha256": "4a182600ff23ab161175c234c012b669e4dbfe3d091ec3ab88cc648fdba0ad60"
+    },
+    {
+      "path": "extension/src/manifest-security.mjs",
+      "sha256": "7d96d99d61ab07d0d5d217f114940e43a69e8b4ebc26aad9310400feadf3d461"
+    },
+    {
+      "path": "extension/src/mp4-format-probe.mjs",
+      "sha256": "cba36fa49a4968ff45d5638d35b3650e6a888566dc25cafb04b4fa48c8e4661e"
+    },
+    {
+      "path": "extension/src/operation-context.mjs",
+      "sha256": "f6889a742aee57c3213195d73568bc089a1e513e4f6630a654ab6f67fd747b7a"
+    },
+    {
+      "path": "extension/src/playback-session.mjs",
+      "sha256": "3d86da5374104253bec41d2f70b2656a414a33f977fe0f70e8a3d47ee03fd0b9"
+    },
+    {
+      "path": "extension/src/player-identity-observation.mjs",
+      "sha256": "6b37cc7c05ffe1ff10b9acb1606413a46d51d456882292436c0f11fd25d4110d"
+    },
+    {
+      "path": "extension/src/protected-playback-session.mjs",
+      "sha256": "51e10a481d91c3df90830ea0ecbd654341a7bd8bd6b948b7a38ebeadb3c5e794"
+    },
+    {
+      "path": "extension/src/seamless-rules.mjs",
+      "sha256": "cd684a8313396f95d477ea7e3ee476dcbf65f25f1f478578a383956349cc069f"
+    },
+    {
+      "path": "extension/src/source-identity.mjs",
+      "sha256": "3ac99aec0b685d6582ceaaff67383e30ad530d270f05bc3759483b094a59edad"
+    },
+    {
+      "path": "extension/src/staging-failure.mjs",
+      "sha256": "ccaa47330f0b28a52ed23e861c14f7d2f46305b79996582c217732b16c60eb66"
+    },
+    {
+      "path": "extension/src/system-files.mjs",
+      "sha256": "ebd95b14517ae85f2e6e002c8a210ed29edc3ec4ecca0d47f0c92f6995ebdc1f"
+    },
+    {
+      "path": "packet-core/client/browser-account.mjs",
+      "sha256": "9bd3ce737d021552bbb27e3d40461c5654708797dad689834ca27feec1ce3766"
+    },
+    {
+      "path": "packet-core/client/browser-entry.mjs",
+      "sha256": "37f139924dddf618142afe77a53ee545f7c6bebe0f0d6ac9e1965c736cd05b41"
+    },
+    {
+      "path": "packet-core/client/browser-owner.mjs",
+      "sha256": "bef254c125e78fbbf2a7cc5f609442a5dc1f4b8331ecb232d2fc47b1dcab7bb6"
+    },
+    {
+      "path": "packet-core/client/browser-signout-channel.mjs",
+      "sha256": "80908bd35fd42d32fc42677666a0380e75679eed6f3254c2f847bdeb5bc0567d"
+    },
+    {
+      "path": "packet-core/client/browser-signout.mjs",
+      "sha256": "ba4447ea326a1feec8f5a3b13856382c6d1e476f51edf4f728fdcce0c97c59ad"
+    },
+    {
+      "path": "packet-core/client/disk-staging.mjs",
+      "sha256": "33f97ae0c4058b725796d4b4582fe7274b089e95514c02330ef8c878a4ec2423"
+    },
+    {
+      "path": "packet-core/client/disk-vault.mjs",
+      "sha256": "80aafab9b389e2059d139dd03ccf99429f76dbcb75b96f81999eea1e11803ecf"
+    },
+    {
+      "path": "packet-core/client/installation-store.mjs",
+      "sha256": "20cbd9385d7a254d714680e569a21c4df436c27a3568a739ea9115a737fabfa5"
+    },
+    {
+      "path": "packet-core/client/lease-cache.mjs",
+      "sha256": "6bd3fdcea94e74d49a85231fbb77774b6962ee87d1fc6de7ecee67c6188d14b2"
+    },
+    {
+      "path": "packet-core/client/license-manager.mjs",
+      "sha256": "15d5b6f84a3cd6c1ea75d2a9113bda8850237233c31799daa9e19a95d7cf3ff1"
+    },
+    {
+      "path": "packet-core/client/paired-website-client.mjs",
+      "sha256": "4103b2aae40b7cb3300fc007ef9644d0a9dbe8613b7f7bdc3e97872a487ce314"
+    },
+    {
+      "path": "packet-core/client/vault-manager.mjs",
+      "sha256": "360237ca42237b6f02307d496a980a83c76d1174c039e098af1b3464faf5abc9"
+    },
+    {
+      "path": "packet-core/client/website-client.mjs",
+      "sha256": "112522156d8ab6ad762b4d8419619410e5d6a20b8c51c8a33dcba041a38bdecd"
+    },
+    {
+      "path": "packet-core/node_modules/jose/dist/webapi/index.js",
+      "sha256": "f198638529597ab18dc3d2799f362106121f90cf0b0c43e75c3dffa5cc6b8590"
+    },
+    {
+      "path": "packet-core/node_modules/jose/dist/webapi/jwe/compact/decrypt.js",
+      "sha256": "c08202f5114caee270bcaa0ed3e119acb241f88d51c6d65a34a1fd6a3353cd2a"
+    },
+    {
+      "path": "packet-core/node_modules/jose/dist/webapi/jwe/compact/encrypt.js",
+      "sha256": "8db8eb9fa34a0187c0ff26e04c37024af421f2f265255d60a01c0edf416f2f85"
+    },
+    {
+      "path": "packet-core/node_modules/jose/dist/webapi/jwe/flattened/decrypt.js",
+      "sha256": "4964d31fafb143a8f15cf4820214b268706dbbd569bdedaa9b24a11520f6c6b2"
+    },
+    {
+      "path": "packet-core/node_modules/jose/dist/webapi/jwe/flattened/encrypt.js",
+      "sha256": "e1fe288a34aae4938dbdd13b86e33e54fef9ff3f3c55a2354ab9d7b5665d1e92"
+    },
+    {
+      "path": "packet-core/node_modules/jose/dist/webapi/jwe/general/decrypt.js",
+      "sha256": "3a721fc3958f36c3bed7764a032238b35f9172bf95d40a7e28a4cea4d7ccd511"
+    },
+    {
+      "path": "packet-core/node_modules/jose/dist/webapi/jwe/general/encrypt.js",
+      "sha256": "2b0bdf8227f2c88fbacf7965cc78809f14b844e76a179a16099b60cf1562012b"
+    },
+    {
+      "path": "packet-core/node_modules/jose/dist/webapi/jwk/embedded.js",
+      "sha256": "449f2b08f47d006a4b937201692b7a830c9e9ac785e82073c1f6f9792642f91d"
+    },
+    {
+      "path": "packet-core/node_modules/jose/dist/webapi/jwk/thumbprint.js",
+      "sha256": "a1a3918fc1e2d3a8e70d613bf7b486eeac39c1ef9fcb4b36e028460276565e41"
+    },
+    {
+      "path": "packet-core/node_modules/jose/dist/webapi/jwks/local.js",
+      "sha256": "ac751386e13c8b5c0ef87848ae98e2a97dd6eaa3973346edff3b29350d3945b0"
+    },
+    {
+      "path": "packet-core/node_modules/jose/dist/webapi/jwks/remote.js",
+      "sha256": "b0860b27b5cb461bc743291a228da93c387a664d989fc69829a9626bfa0de264"
+    },
+    {
+      "path": "packet-core/node_modules/jose/dist/webapi/jws/compact/sign.js",
+      "sha256": "09450f2b3763b531d28bec9796d2f3ff0064c7b07dde15f7d1e1e7693e2ec12a"
+    },
+    {
+      "path": "packet-core/node_modules/jose/dist/webapi/jws/compact/verify.js",
+      "sha256": "6d1109739b895858c7006d02ef91f8b13ce5ae8c91996d1f1c0b57c1ab33c398"
+    },
+    {
+      "path": "packet-core/node_modules/jose/dist/webapi/jws/flattened/sign.js",
+      "sha256": "01cb90bcf39d8aa9bcf6d3efd36f5b80c112e547ef5448d7512b7aafa72bb6dd"
+    },
+    {
+      "path": "packet-core/node_modules/jose/dist/webapi/jws/flattened/verify.js",
+      "sha256": "ff23003a7b0a4d8a7add2cd8b13b72393b863f6f251ddd814f08d69b35be3b2e"
+    },
+    {
+      "path": "packet-core/node_modules/jose/dist/webapi/jws/general/sign.js",
+      "sha256": "226bf031e03174e6a505c534b4bdd228d8d677cf2c494ffc7c618dfd535f5b55"
+    },
+    {
+      "path": "packet-core/node_modules/jose/dist/webapi/jws/general/verify.js",
+      "sha256": "4623bf6e59023c7a2bfe5cf9d40b5d1e9f8165f2f18b4374e061911582041a4a"
+    },
+    {
+      "path": "packet-core/node_modules/jose/dist/webapi/jwt/decrypt.js",
+      "sha256": "233bb797f9239582ada83fac5723c818dfa0f24e9a864680759df5f2bb5b260c"
+    },
+    {
+      "path": "packet-core/node_modules/jose/dist/webapi/jwt/encrypt.js",
+      "sha256": "c08c45c7ba87d6bd6d51051cafe80a8ce33150a4cf5116ae03e76e3c65edb2a2"
+    },
+    {
+      "path": "packet-core/node_modules/jose/dist/webapi/jwt/sign.js",
+      "sha256": "aab04f3c698940af2bae4180bfda71914d36700b70f25afd0fefe3028a45f2dd"
+    },
+    {
+      "path": "packet-core/node_modules/jose/dist/webapi/jwt/unsecured.js",
+      "sha256": "a9b3d6898039163c1e47573e27290b58fee7a3b8f9a3aac2fe04c1d7a77fb63d"
+    },
+    {
+      "path": "packet-core/node_modules/jose/dist/webapi/jwt/verify.js",
+      "sha256": "e015a18744717762a1f138d0f0a88a40d3b660bc46f76ddf8309b32987175bef"
+    },
+    {
+      "path": "packet-core/node_modules/jose/dist/webapi/key/export.js",
+      "sha256": "634aee75fbdabbffb73d439ae63305ad043a268354ecf53426b827ba3f81cfb7"
+    },
+    {
+      "path": "packet-core/node_modules/jose/dist/webapi/key/generate_key_pair.js",
+      "sha256": "97e4e5b66af75700da10fc5807471636b633d7c72c65a7fe50980c4a3a2c6c74"
+    },
+    {
+      "path": "packet-core/node_modules/jose/dist/webapi/key/generate_secret.js",
+      "sha256": "b6984ddbed52cff9179a1b681076ad6d1529ff50fabc58bb32b9b71752cf9523"
+    },
+    {
+      "path": "packet-core/node_modules/jose/dist/webapi/key/import.js",
+      "sha256": "ab2f57a9db99e8d48451a8d0a8adf75379381f65b0e3e28ba6c02aa5bb3ee5fa"
+    },
+    {
+      "path": "packet-core/node_modules/jose/dist/webapi/lib/asn1.js",
+      "sha256": "4945afdb21c49efc7fa703a2e1cde94b8a1d28f13416aafd26128453472903c5"
+    },
+    {
+      "path": "packet-core/node_modules/jose/dist/webapi/lib/buffer_utils.js",
+      "sha256": "cac7d34f3eab78ad56967097b793f55cd50ae1d7b42012d8e1a1f2736f50d720"
+    },
+    {
+      "path": "packet-core/node_modules/jose/dist/webapi/lib/content_encryption.js",
+      "sha256": "43b0e897c80a12b42516a6d48cbb2a31ef3a9522eccc5716a01d182cade9eb63"
+    },
+    {
+      "path": "packet-core/node_modules/jose/dist/webapi/lib/deflate.js",
+      "sha256": "9f7b28c5705633835228c8e11642b860260d62ddda0d76dc02a487664b1d2eb5"
+    },
+    {
+      "path": "packet-core/node_modules/jose/dist/webapi/lib/jwe_algorithms.js",
+      "sha256": "d41562ff2ccc3599f7189384653fbcd1ff68babd475fe99e31eccb61706abd47"
+    },
+    {
+      "path": "packet-core/node_modules/jose/dist/webapi/lib/jwe_decrypt.js",
+      "sha256": "5d5ba0ac80a18138940d27b439f4420c16001f4da57c9d1168c7b41e4cfe009b"
+    },
+    {
+      "path": "packet-core/node_modules/jose/dist/webapi/lib/jwe_encrypt.js",
+      "sha256": "783d800778e27227fb39987be2da1705c96993df614bc30fc08252b9cef137ed"
+    },
+    {
+      "path": "packet-core/node_modules/jose/dist/webapi/lib/jws_algorithms.js",
+      "sha256": "72e8be8e3d179effde822ecc8f75c7726d7323be718a961837f6882b012992e9"
+    },
+    {
+      "path": "packet-core/node_modules/jose/dist/webapi/lib/jws_sign.js",
+      "sha256": "f91650ec8e2248bdbcaa0b11a0f4018a4cfd9b42f30219b0ba7e839e86172e70"
+    },
+    {
+      "path": "packet-core/node_modules/jose/dist/webapi/lib/jws_verify.js",
+      "sha256": "7c236143de90ead568128265a6d9dcfc5cb6a264e5fb0bdc1e39989e2cfc19c2"
+    },
+    {
+      "path": "packet-core/node_modules/jose/dist/webapi/lib/jwt_claims_set.js",
+      "sha256": "624433ec72028d7feb512151541cfc96726aa8ceaa6f095867989c5eb8c50e5d"
+    },
+    {
+      "path": "packet-core/node_modules/jose/dist/webapi/lib/key_algorithm.js",
+      "sha256": "4ef0b80292076659b054313f70eeef81cd7df01e2ec9988c24552206bc42cc07"
+    },
+    {
+      "path": "packet-core/node_modules/jose/dist/webapi/lib/key_descriptor.js",
+      "sha256": "80ae05a1fc41271a29dbd5ab717255a1255ee0ac43b6820853d2f338d9e74b46"
+    },
+    {
+      "path": "packet-core/node_modules/jose/dist/webapi/lib/key_management.js",
+      "sha256": "c65e89877bda7df0f5bf08686334a1ab8fe291b4bcdc5599edf901cd7b5cecaf"
+    },
+    {
+      "path": "packet-core/node_modules/jose/dist/webapi/lib/key.js",
+      "sha256": "e150a72056a69a980a19c23334f5c16e4b9aedfbde9af2702070c5bf93fc075d"
+    },
+    {
+      "path": "packet-core/node_modules/jose/dist/webapi/lib/validate.js",
+      "sha256": "2a85b6eadc2c03af99f9fbb1cf01198e9ef2e3af5589eadccb2eb17627aeccfb"
+    },
+    {
+      "path": "packet-core/node_modules/jose/dist/webapi/util/base64url.js",
+      "sha256": "9c9c168e24c5be2db20956262065b94556de959e5dcc62430e31a0f57f821691"
+    },
+    {
+      "path": "packet-core/node_modules/jose/dist/webapi/util/decode_jwt.js",
+      "sha256": "46031ba27050ae0a4da49682a0c799966e21df49b625651e499ddc29cbbf20a2"
+    },
+    {
+      "path": "packet-core/node_modules/jose/dist/webapi/util/decode_protected_header.js",
+      "sha256": "8d53bde529f722c22f65be574e854a2a04fadd38f919456517707a172a394bda"
+    },
+    {
+      "path": "packet-core/node_modules/jose/dist/webapi/util/errors.js",
+      "sha256": "9bb7503fd84d5387677f1b917969cdf7c20482c3d86e92e64972bc83938b95f8"
+    },
+    {
+      "path": "packet-core/node_modules/libsodium-sumo/dist/modules-sumo-esm/libsodium-sumo.mjs",
+      "sha256": "4c94708f7e78eac7a32b29e2ce0ff96f4bd599d78c129f27bf8a061e20776c8c"
+    },
+    {
+      "path": "packet-core/node_modules/libsodium-wrappers-sumo/dist/modules-sumo-esm/libsodium-wrappers.mjs",
+      "sha256": "40de1ef7cb8f2caae02c2a8f04809151904fa28cb9364cadedc57af89a6c9284"
+    },
+    {
+      "path": "packet-core/src/catalog.mjs",
+      "sha256": "0bec4c0640e08bf73f3570fe7ba5ad7988c31facf82b637827e8c6d5f4b861ec"
+    },
+    {
+      "path": "packet-core/src/contract.mjs",
+      "sha256": "46912549323b1a9572c883967e286477feadd1d1aff2e78e250419761ce7bf4a"
+    },
+    {
+      "path": "packet-core/src/files.mjs",
+      "sha256": "88e15b51fd3b3c4bee05adf54a5c4a430d3a1ef10b4c451309a0685272114ea1"
+    },
+    {
+      "path": "packet-core/src/importer.mjs",
+      "sha256": "169efe5eeac8f43bcc6c6a8ae209ad757f137395e3de6c2f06dc07c51878d424"
+    },
+    {
+      "path": "packet-core/src/license.mjs",
+      "sha256": "30cf7db199404341f778ea25c11d74b1b780c2fe5ecab9dd55412d3a59091b74"
+    },
+    {
+      "path": "packet-core/src/transport.mjs",
+      "sha256": "dc32115aa9f7d2d4599d9a0b116dfcd3c1d10d5bab30176f5a1b0b53bfff2aed"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "vendor/protected/owner.mjs",
+      "sha256": "2dd8e6c5f2531a8ef0357a5850469cec799d3a64d9ac51ca0a9c1b5b9ff7eb62",
+      "bytes": 829868
+    },
+    {
+      "path": "vendor/protected/signout.mjs",
+      "sha256": "cb5ee850b203183a36b1298cdcb17d9fb465b020b4c11f591a726eb884cf01e8",
+      "bytes": 13186
+    }
+  ]
+}

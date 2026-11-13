@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en" class="popup-surface">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Seamless Scene</title><link rel="stylesheet" href="viewer.css"></head>
+<body class="popup"><main>
+<header class="popup-header"><img class="brand-mark" src="icons/ss-active-48.png" alt="" width="38" height="38"><div><h1>Seamless Scene</h1><p class="muted" id="popup-version"></p><p class="muted popup-account" id="popup-account" hidden></p></div></header>
+<p id="update-strip" class="update-strip" hidden><span id="update-text"></span> · <button type="button" class="text-link" id="update-get">Get it on the website <span aria-hidden="true">↗</span></button></p>
+<section class="playback-card" aria-labelledby="now-heading"><h2 id="now-heading">Now playing</h2>
+<p id="now-show" class="now-show">Open a title on Prime Video and press play.</p>
+<p class="now-edit"><span id="now-chip" class="state-chip chip-off">Off</span><span id="now-edit">No edit on</span></p>
+<p id="step-detail" class="muted"></p>
+<ul id="edit-list" class="edit-list" hidden></ul>
+<div class="popup-playback-actions"><button class="primary" id="primary-action" hidden></button></div>
+<div class="action-row" id="second-row" hidden></div>
+<div id="change-panel" class="change-panel" hidden><p class="muted">Change edit</p><ul id="change-list" class="edit-list"></ul><button type="button" class="text-link" id="find-more">Find more for this episode on the website <span aria-hidden="true">↗</span></button></div>
+
+</section>
+<section id="popup-downloads" class="playback-card" aria-labelledby="downloads-heading" hidden><h2 id="downloads-heading">Downloads</h2><ul id="popup-download-list" class="download-list" aria-live="polite"></ul></section>
+<p id="notice" role="status" aria-live="polite"></p>
+<nav class="popup-footer" aria-label="Toolbar menu links"><button type="button" class="text-link" id="library">Library</button><button type="button" class="text-link" id="settings">Settings</button><button type="button" class="text-link" id="portal">Website <span aria-hidden="true">↗</span></button><!-- @creator --><button type="button" class="text-link" id="creator" hidden>Creator tools</button><!-- /@creator --><button type="button" class="text-link" id="player" hidden>Open test player <span aria-hidden="true">↗</span></button></nav>
+</main><script type="module" src="viewer.mjs"></script></body></html>

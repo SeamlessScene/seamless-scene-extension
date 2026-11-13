@@ -1,0 +1,9 @@
+# Reviewed false positives only; every other default rule stays on.
+[extend]
+useDefault = true
+
+[allowlist]
+description = "The manifest key is the extension's RSA public key (it fixes the extension ID); the generated protected bundle contains libsodium function names such as crypto_kdf_KEYBYTES."
+# Older layouts kept the extension under packages/extension/.
+paths = ['''packages/(?:browser-)?extension/vendor/protected/owner\.mjs''']
+regexes = ['''^MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA[A-Za-z0-9+/=]+$''']

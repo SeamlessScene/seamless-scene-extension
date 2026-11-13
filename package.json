@@ -1,0 +1,27 @@
+{
+  "name": "seamless-scene-extension",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Seamless Scene Chrome extension (source-available; see LICENSE.md).",
+  "license": "SEE LICENSE IN LICENSE.md",
+  "type": "module",
+  "scripts": {
+    "test": "node --test packages/browser-extension/test/*.test.mjs scripts/schema-check/test/*.test.mjs",
+    "test:packet": "npm --prefix packages/protected-packet-core test",
+    "build": "node scripts/build-extension.mjs --viewer",
+    "check:packet": "node scripts/check-edit-packet.mjs",
+    "check:protected": "node scripts/prepare-protected-browser.mjs --check",
+    "build:protected": "node scripts/prepare-protected-browser.mjs",
+    "build:rules": "node scripts/build-rules.mjs",
+    "check:rules": "node scripts/build-rules.mjs --check",
+    "verify": "node scripts/build-extension.mjs --verify"
+  },
+  "devDependencies": {
+    "ajv": "8.20.0",
+    "ajv-formats": "3.0.1",
+    "esbuild": "0.28.2"
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}

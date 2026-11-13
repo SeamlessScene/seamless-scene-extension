@@ -1,0 +1,82 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://scene-substitution.invalid/schemas/edit-packet-local-v1.schema.json",
+  "title": "User-imported local edit packet v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["packet_schema_version", "packet_id", "purpose", "manifest", "asset_bindings"],
+  "properties": {
+    "packet_schema_version": { "const": "1.0.0" },
+    "packet_id": { "$ref": "manifest-v1.schema.json#/$defs/id" },
+    "purpose": { "const": "local-user-edit" },
+    "manifest": { "$ref": "#/$defs/localManifest" },
+    "asset_bindings": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 1000,
+      "items": { "$ref": "edit-packet-v1.schema.json#/$defs/assetBinding" }
+    }
+  },
+  "$defs": {
+    "localManifest": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "schema_version", "edit_id", "manifest_version", "status", "source", "compatibility", "segments", "feature_flags", "content", "signature"
+      ],
+      "properties": {
+        "schema_version": { "const": "1.0.0" },
+        "edit_id": { "$ref": "manifest-v1.schema.json#/$defs/id" },
+        "manifest_version": { "type": "integer", "minimum": 1, "maximum": 2147483647 },
+        "status": { "const": "local-only" },
+        "source": { "$ref": "manifest-v1.schema.json#/$defs/source" },
+        "compatibility": { "$ref": "manifest-v1.schema.json#/$defs/compatibility" },
+        "segments": { "type": "array", "minItems": 1, "maxItems": 1000, "items": { "$ref": "#/$defs/localSegment" } },
+        "feature_flags": { "$ref": "manifest-v1.schema.json#/$defs/featureFlags" },
+        "content": { "$ref": "manifest-v1.schema.json#/$defs/content" },
+        "rights": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["classification", "approval_reference"],
+          "properties": {
+            "classification": { "const": "user-supplied" },
+            "approval_reference": { "$ref": "manifest-v1.schema.json#/$defs/id" }
+          }
+        },
+        "signature": { "type": "null" }
+      }
+    },
+    "localAsset": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "sha256", "expected_duration_ms", "container", "video_codec", "audio_codec",
+        "width", "height", "dynamic_range"
+      ],
+      "properties": {
+        "sha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+        "expected_duration_ms": { "type": "integer", "minimum": 1500, "maximum": 120000 },
+        "container": { "const": "video/mp4" },
+        "video_codec": { "const": "avc1" },
+        "audio_codec": { "const": "mp4a" },
+        "width": { "type": "integer", "minimum": 320, "maximum": 4096, "multipleOf": 2 },
+        "height": { "type": "integer", "minimum": 180, "maximum": 2160, "multipleOf": 2 },
+        "dynamic_range": { "const": "sdr" }
+      }
+    },
+    "localSegment": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["segment_id", "action", "trigger_time_ms", "resume_time_ms", "asset", "transition", "failure_policy"],
+      "properties": {
+        "segment_id": { "$ref": "manifest-v1.schema.json#/$defs/id" },
+        "action": { "enum": ["REPLACE", "INSERT"] },
+        "trigger_time_ms": { "type": "integer", "minimum": 0 },
+        "resume_time_ms": { "type": "integer", "minimum": 0 },
+        "asset": { "$ref": "#/$defs/localAsset" },
+        "transition": { "$ref": "manifest-v1.schema.json#/$defs/transition" },
+        "failure_policy": { "const": "continue_native" }
+      }
+    }
+  }
+}

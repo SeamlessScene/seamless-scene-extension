@@ -1,0 +1,5 @@
+{
+ "file": "missing-clip.zip",
+ "refusal": "pack-clip-missing",
+ "message_contains": "clips/clip-b.mp4"
+}

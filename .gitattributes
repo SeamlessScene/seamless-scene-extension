@@ -1,0 +1,15 @@
+# Keep checkouts byte-identical on Windows, macOS and Linux. The build hashes
+# source and vendored files, so a CRLF conversion on Windows would fail it.
+* text=auto eol=lf
+
+# Hashed or generated inputs: never convert.
+packages/browser-extension/vendor/** -text
+packages/browser-extension/schemas/** -text
+
+# Binary media and images.
+*.mp4 binary
+*.png binary
+*.jpg binary
+*.webp binary
+*.wasm binary
+*.pem binary

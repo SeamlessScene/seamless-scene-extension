@@ -1,0 +1,496 @@
+{
+ "rules_version": "1.3.0",
+ "clip_duration_ms": [
+  {
+   "profile": "local-user",
+   "ms": 999,
+   "accept": false
+  },
+  {
+   "profile": "local-user",
+   "ms": 1000,
+   "accept": false
+  },
+  {
+   "profile": "local-user",
+   "ms": 1499,
+   "accept": false
+  },
+  {
+   "profile": "local-user",
+   "ms": 1500,
+   "accept": true
+  },
+  {
+   "profile": "local-user",
+   "ms": 4999,
+   "accept": true
+  },
+  {
+   "profile": "local-user",
+   "ms": 5000,
+   "accept": true
+  },
+  {
+   "profile": "local-user",
+   "ms": 120000,
+   "accept": true
+  },
+  {
+   "profile": "local-user",
+   "ms": 120001,
+   "accept": false
+  },
+  {
+   "profile": "catalog-v2",
+   "ms": 999,
+   "accept": false
+  },
+  {
+   "profile": "catalog-v2",
+   "ms": 1000,
+   "accept": false
+  },
+  {
+   "profile": "catalog-v2",
+   "ms": 1499,
+   "accept": false
+  },
+  {
+   "profile": "catalog-v2",
+   "ms": 1500,
+   "accept": true
+  },
+  {
+   "profile": "catalog-v2",
+   "ms": 4999,
+   "accept": true
+  },
+  {
+   "profile": "catalog-v2",
+   "ms": 5000,
+   "accept": true
+  },
+  {
+   "profile": "catalog-v2",
+   "ms": 120000,
+   "accept": true
+  },
+  {
+   "profile": "catalog-v2",
+   "ms": 120001,
+   "accept": false
+  },
+  {
+   "profile": "mvp",
+   "ms": 999,
+   "accept": false
+  },
+  {
+   "profile": "mvp",
+   "ms": 1000,
+   "accept": false
+  },
+  {
+   "profile": "mvp",
+   "ms": 1499,
+   "accept": false
+  },
+  {
+   "profile": "mvp",
+   "ms": 1500,
+   "accept": false
+  },
+  {
+   "profile": "mvp",
+   "ms": 4999,
+   "accept": false
+  },
+  {
+   "profile": "mvp",
+   "ms": 5000,
+   "accept": true
+  },
+  {
+   "profile": "mvp",
+   "ms": 60000,
+   "accept": true
+  },
+  {
+   "profile": "mvp",
+   "ms": 60001,
+   "accept": false
+  }
+ ],
+ "season_episode": [
+  {
+   "profile": "local-user",
+   "season": -1,
+   "episode": 1,
+   "accept": false
+  },
+  {
+   "profile": "local-user",
+   "season": 0,
+   "episode": 1,
+   "accept": true
+  },
+  {
+   "profile": "local-user",
+   "season": 1,
+   "episode": 1,
+   "accept": true
+  },
+  {
+   "profile": "local-user",
+   "season": 10000,
+   "episode": 1,
+   "accept": true
+  },
+  {
+   "profile": "local-user",
+   "season": 10001,
+   "episode": 1,
+   "accept": false
+  },
+  {
+   "profile": "catalog-v2",
+   "season": -1,
+   "episode": 1,
+   "accept": false
+  },
+  {
+   "profile": "catalog-v2",
+   "season": 0,
+   "episode": 1,
+   "accept": true
+  },
+  {
+   "profile": "catalog-v2",
+   "season": 1,
+   "episode": 1,
+   "accept": true
+  },
+  {
+   "profile": "catalog-v2",
+   "season": 10000,
+   "episode": 1,
+   "accept": true
+  },
+  {
+   "profile": "catalog-v2",
+   "season": 10001,
+   "episode": 1,
+   "accept": false
+  },
+  {
+   "profile": "mvp",
+   "season": -1,
+   "episode": 1,
+   "accept": false
+  },
+  {
+   "profile": "mvp",
+   "season": 0,
+   "episode": 1,
+   "accept": true
+  },
+  {
+   "profile": "mvp",
+   "season": 1,
+   "episode": 1,
+   "accept": true
+  },
+  {
+   "profile": "mvp",
+   "season": 10000,
+   "episode": 1,
+   "accept": true
+  },
+  {
+   "profile": "mvp",
+   "season": 10001,
+   "episode": 1,
+   "accept": false
+  }
+ ],
+ "tolerance_ms": [
+  {
+   "where": "edit.json",
+   "ms": 0,
+   "accept": true
+  },
+  {
+   "where": "edit.json",
+   "ms": 3000,
+   "accept": true
+  },
+  {
+   "where": "edit.json",
+   "ms": 5000,
+   "accept": true
+  },
+  {
+   "where": "edit.json",
+   "ms": 5001,
+   "accept": false
+  },
+  {
+   "where": "edit.json",
+   "ms": 10000,
+   "accept": false
+  },
+  {
+   "where": "edit.json",
+   "ms": 10001,
+   "accept": false
+  },
+  {
+   "where": "catalog-v2",
+   "ms": 0,
+   "accept": true
+  },
+  {
+   "where": "catalog-v2",
+   "ms": 3000,
+   "accept": true
+  },
+  {
+   "where": "catalog-v2",
+   "ms": 5000,
+   "accept": true
+  },
+  {
+   "where": "catalog-v2",
+   "ms": 5001,
+   "accept": false
+  },
+  {
+   "where": "catalog-v2",
+   "ms": 10000,
+   "accept": false
+  },
+  {
+   "where": "catalog-v2",
+   "ms": 10001,
+   "accept": false
+  },
+  {
+   "where": "local-user-read",
+   "ms": 0,
+   "accept": true
+  },
+  {
+   "where": "local-user-read",
+   "ms": 3000,
+   "accept": true
+  },
+  {
+   "where": "local-user-read",
+   "ms": 5000,
+   "accept": true
+  },
+  {
+   "where": "local-user-read",
+   "ms": 5001,
+   "accept": true
+  },
+  {
+   "where": "local-user-read",
+   "ms": 10000,
+   "accept": true
+  },
+  {
+   "where": "local-user-read",
+   "ms": 10001,
+   "accept": false
+  },
+  {
+   "where": "mvp-read",
+   "ms": 0,
+   "accept": true
+  },
+  {
+   "where": "mvp-read",
+   "ms": 3000,
+   "accept": true
+  },
+  {
+   "where": "mvp-read",
+   "ms": 5000,
+   "accept": true
+  },
+  {
+   "where": "mvp-read",
+   "ms": 5001,
+   "accept": true
+  },
+  {
+   "where": "mvp-read",
+   "ms": 10000,
+   "accept": true
+  },
+  {
+   "where": "mvp-read",
+   "ms": 10001,
+   "accept": false
+  }
+ ],
+ "required_client": [
+  {
+   "profile": "local-user",
+   "shortest_clip_ms": 1500,
+   "season": 0,
+   "requires": "0.65.0"
+  },
+  {
+   "profile": "local-user",
+   "shortest_clip_ms": 1500,
+   "season": 1,
+   "requires": "0.64.2"
+  },
+  {
+   "profile": "local-user",
+   "shortest_clip_ms": 4999,
+   "season": 0,
+   "requires": "0.65.0"
+  },
+  {
+   "profile": "local-user",
+   "shortest_clip_ms": 4999,
+   "season": 1,
+   "requires": "0.64.2"
+  },
+  {
+   "profile": "local-user",
+   "shortest_clip_ms": 5000,
+   "season": 0,
+   "requires": "0.65.0"
+  },
+  {
+   "profile": "local-user",
+   "shortest_clip_ms": 5000,
+   "season": 1,
+   "requires": "0.63.0"
+  },
+  {
+   "profile": "catalog-v2",
+   "shortest_clip_ms": 1500,
+   "season": 0,
+   "requires": "0.65.0"
+  },
+  {
+   "profile": "catalog-v2",
+   "shortest_clip_ms": 1500,
+   "season": 1,
+   "requires": "0.65.0"
+  },
+  {
+   "profile": "catalog-v2",
+   "shortest_clip_ms": 4999,
+   "season": 0,
+   "requires": "0.65.0"
+  },
+  {
+   "profile": "catalog-v2",
+   "shortest_clip_ms": 4999,
+   "season": 1,
+   "requires": "0.65.0"
+  },
+  {
+   "profile": "catalog-v2",
+   "shortest_clip_ms": 5000,
+   "season": 0,
+   "requires": "0.42.0"
+  },
+  {
+   "profile": "catalog-v2",
+   "shortest_clip_ms": 5000,
+   "season": 1,
+   "requires": "0.42.0"
+  }
+ ],
+ "version_tag": [
+  {
+   "value": "creator-reported",
+   "accept": true
+  },
+  {
+   "value": "user-capture-20261014",
+   "accept": true
+  },
+  {
+   "value": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+   "accept": true
+  },
+  {
+   "value": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+   "accept": false
+  },
+  {
+   "value": "User Capture",
+   "accept": false
+  },
+  {
+   "value": "-x",
+   "accept": false
+  },
+  {
+   "value": "",
+   "accept": false
+  }
+ ],
+ "territory": [
+  {
+   "value": "US",
+   "accept": true
+  },
+  {
+   "value": "GB",
+   "accept": true
+  },
+  {
+   "value": "ZZ",
+   "accept": true
+  },
+  {
+   "value": "us",
+   "accept": false
+  },
+  {
+   "value": "USA",
+   "accept": false
+  },
+  {
+   "value": "",
+   "accept": false
+  }
+ ],
+ "tier": [
+  {
+   "value": "ad-free",
+   "accept": true,
+   "catalog": true
+  },
+  {
+   "value": "ad-supported",
+   "accept": true,
+   "catalog": true
+  },
+  {
+   "value": "unverified",
+   "accept": true,
+   "catalog": false
+  },
+  {
+   "value": "prime-video",
+   "accept": false,
+   "catalog": false
+  },
+  {
+   "value": "free",
+   "accept": false,
+   "catalog": false
+  }
+ ]
+}

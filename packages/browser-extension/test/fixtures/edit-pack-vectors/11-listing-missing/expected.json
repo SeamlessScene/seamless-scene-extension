@@ -1,0 +1,14 @@
+{
+ "file": "bare.zip",
+ "archive_id": "9629f0fdb189b4edc0a4ec9a0a87b0eac5822e3dcfa5ef4c9c953d4c4e3feaab",
+ "title": null,
+ "clips": 2,
+ "missing": [
+  "title",
+  "description",
+  "category",
+  "tags",
+  "mature",
+  "revision"
+ ]
+}

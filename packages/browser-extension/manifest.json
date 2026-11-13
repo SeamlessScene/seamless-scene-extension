@@ -1,0 +1,80 @@
+{
+  "manifest_version": 3,
+  "name": "Seamless Scene",
+  "version": "0.66.2",
+  "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAviMN30FTQkJ+M9dDhFRwNyAs12H3fpzNTISjlaNwHGpH8j1eXnn41okYblSLrYnBWgE3MMHjoeMQVlGkdmvPRlTcvvmFQcSV2ze6cczh3gIHf8DzAaDWWgxJafscJCqbmNIwML0upnHuarl7F6MG+BCfr7LWTXr3QdXRUxnzGXbpc2+9mE1lya34wCs5n3grysI7JHAFKDR+XWYKn3T2neJt4oWN79/aDvrNKb3mDyBaCs3HARMgzTmxLxCuTraXEVZHvCOLrhhPllRKpzyGwhzNmGoixAGefobzy49XeEKXvN+iUVXx893V1AxwbWkxxOBBrxBuUo+oxtIIuhL2bQIDAQAB",
+  "description": "Seamlessly play fan-made scene edits inside the movies and shows you already stream.",
+  "minimum_chrome_version": "133",
+  "content_security_policy": {
+    "extension_pages": "script-src 'self' 'wasm-unsafe-eval'; object-src 'self';"
+  },
+  "permissions": [
+    "activeTab",
+    "scripting",
+    "storage",
+    "sidePanel"
+  ],
+  "host_permissions": [
+    "http://127.0.0.1/*",
+    "http://localhost/*"
+  ],
+  "optional_host_permissions": [
+    "https://www.amazon.com/*",
+    "https://www.primevideo.com/*"
+  ],
+  "background": {
+    "service_worker": "background.mjs",
+    "type": "module"
+  },
+  "action": {
+    "default_title": "Open Seamless Scene",
+    "default_popup": "viewer-popup.html",
+    "default_icon": {
+      "16": "icons/ss-active-16.png",
+      "32": "icons/ss-active-32.png",
+      "48": "icons/ss-active-48.png",
+      "128": "icons/ss-active-128.png"
+    }
+  },
+  "side_panel": {
+    "default_path": "authoring-sidepanel.html"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "http://127.0.0.1/*",
+        "http://localhost/*"
+      ],
+      "js": [
+        "bootstrap.js",
+        "authoring-page-bridge.js"
+      ],
+      "run_at": "document_idle"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "src/*.mjs",
+        "media/*.mp4",
+        "local-playback-frame.html"
+      ],
+      "matches": [
+        "http://127.0.0.1/*",
+        "http://localhost/*",
+        "https://www.amazon.com/*",
+        "https://www.primevideo.com/*"
+      ]
+    }
+  ],
+  "options_ui": {
+    "page": "viewer-settings.html",
+    "open_in_tab": true
+  },
+  "icons": {
+    "16": "icons/ss-active-16.png",
+    "32": "icons/ss-active-32.png",
+    "48": "icons/ss-active-48.png",
+    "128": "icons/ss-active-128.png"
+  }
+}

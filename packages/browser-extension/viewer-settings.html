@@ -1,0 +1,86 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Seamless Scene Settings</title><link rel="stylesheet" href="viewer.css"></head><body class="settings-page"><div class="settings-shell">
+<nav class="side-menu" aria-label="Settings sections"><p class="side-brand"><img src="icons/ss-active-48.png" alt="" width="28" height="28"> Seamless Scene</p>
+<a href="#library" data-tab="library">Library</a><a href="#playback" data-tab="playback">Playback</a><a href="#account" data-tab="account">Account &amp; sites</a><!-- @creator --><a href="#creator" data-tab="creator">Creator</a><!-- /@creator --><a href="#local" data-tab="local" id="local-link">Local</a><a href="#advanced" data-tab="advanced">Advanced</a></nav>
+<main>
+<p id="notice" role="status" aria-live="polite"></p>
+
+<section data-tab-panel="library" aria-labelledby="library-heading"><h1 id="library-heading">Library</h1>
+<p class="muted">Website edits kept on this device. They are encrypted and play only through the extension.</p>
+<div class="storage"><p id="storage-summary">Checking storage…</p><label>Space for edits<select id="storage-budget"><option value="">Automatic</option><option value="2000000000">2 GB</option><option value="5000000000">5 GB</option><option value="10000000000">10 GB</option><option value="20000000000">20 GB</option><option value="50000000000">50 GB</option></select></label><label>Make room automatically (removes the edits you watched longest ago)<input type="checkbox" data-preference="autoMakeRoom"></label></div>
+<div class="actions"><button id="check-updates">Check for updates</button></div>
+<div id="downloads" hidden><h2>Downloads</h2><ul id="download-list" class="download-list" aria-live="polite"></ul><div class="actions"><button id="downloads-clear-all" type="button" hidden>Clear all failed</button></div></div>
+<div id="previous" hidden><h2>Previously queued</h2><p class="muted">These were waiting when Chrome restarted, or for more than 12 hours, so they were taken out of the queue.</p><ul id="previous-list" class="download-list"></ul></div>
+<div class="table-wrap"><table id="downloaded-edits"><thead><tr><th>Edit</th><th>Show</th><th>Size</th><th>Last watched</th><th>Status</th><th><span class="sr-only">Actions</span></th></tr></thead><tbody></tbody></table></div>
+<p id="downloaded-empty" class="muted" hidden>No edits downloaded yet. On an edit’s page on the website, choose Watch this edit; it appears here once it has downloaded.</p>
+<div id="undo-bar" class="undo-bar" role="status" hidden><span id="undo-text"></span><button id="undo" type="button">Undo</button></div>
+</section>
+
+<section data-tab-panel="playback" aria-labelledby="playback-heading"><h1 id="playback-heading">Playback</h1>
+<label>Player badge<select data-preference="overlay"><option value="none">Hidden</option><option value="minimal">Badge</option><option value="detailed">Badge with timeline</option></select></label>
+<details class="help"><summary>What the timeline shows</summary><p>The timeline is a thin bar at the right edge of the video: pale green marks a replaced scene, dark green an added scene, stripes a muted stretch and a grey line a cut. The marker shows where you are.</p></details>
+<label>Badge corner<select data-preference="corner"><option value="left">Upper left</option><option value="right">Upper right</option></select></label>
+<label>Scene jump lead-in<select id="lead-in" data-preference="leadInMs" data-number="true"><option value="3000">3 s before the scene</option><option value="5000">5 s before the scene</option><option value="10000">10 s before the scene</option></select></label>
+<label>Turn on an edit you chose before for the same episode<input type="checkbox" data-preference="autoArm"></label>
+<label>Continue with the next episode (turns on the same creator’s edit, or the only matching edit, and downloads it before the episode starts)<input type="checkbox" data-preference="continueEdits"></label>
+<label>Smooth audio at scene changes<input type="checkbox" data-preference="smoothAudio" aria-describedby="smooth-audio-help"></label>
+<p id="smooth-audio-help" class="muted">Blends the sound for a moment when an edited scene starts and ends.</p>
+<label>Theme<select data-preference="theme"><option value="system">System</option><option value="light">Light</option><option value="dark">Dark</option></select></label>
+</section>
+
+<section data-tab-panel="account" aria-labelledby="account-heading"><h1 id="account-heading">Account &amp; sites</h1>
+<h2>Account</h2><p id="account">Checking your account connection…</p><div class="actions"><button id="account-manage">Manage account connection</button></div>
+<h2>Sites</h2><p class="muted">Seamless Scene only watches the video player on sites you allow. It never reads your streaming subscription or signs in for you.</p>
+<p id="permissions" class="site-state">Prime Video: checking…</p><button id="enable-site">Allow Prime Video</button>
+</section>
+
+<!-- @creator -->
+<section data-tab-panel="creator" aria-labelledby="creator-heading"><h1 id="creator-heading">Creator</h1>
+<label>Creator mode<input type="checkbox" id="creator-mode"></label>
+<p class="muted">Creator mode adds Creator tools for marking scenes. Publishing on the website needs separate creator approval.</p>
+<button id="creator" hidden>Open Creator tools</button><p id="creator-hint" class="muted" hidden>Open a Prime Video title first; Creator tools open beside it.</p>
+<h2>Make a .ss file</h2>
+<p id="creator-ss-help" class="muted">Creator tools keep your marked scenes, not your finished clips, so the extension cannot pack an edit by itself. In the website builder, open your project and use <strong>Private playback preview</strong>: it saves a <code>.ss</code> file. Add that file in Settings → Local to watch it; its Export button there saves a copy again.</p>
+<p><a id="creator-projects" href="#" target="_blank" rel="noreferrer" hidden>Open your projects on the website ↗</a></p>
+<h2>Export folder</h2><p class="muted">Only folders you choose are read or written. Website edits use the extension’s private storage.</p>
+<div class="actions"><button data-folder="exports">Choose export folder</button><button id="forget-folders">Forget folder choices</button></div><output id="folders"></output>
+</section>
+<!-- /@creator -->
+
+<section data-tab-panel="local" aria-labelledby="local-heading" id="local-panel"><h1 id="local-heading">Local</h1>
+<p class="muted"><strong>Local edits.</strong> Watch edits saved as single <code>.ss</code> files or edit packs (<code>.zip</code>), from your own computer or shared with you by someone else. They play exactly like edits from the Seamless Scene catalog. Each file is checked once and kept in the extension’s storage, so you can move or delete the original. Edits you add here show as “Local: …” when you watch the matching episode.</p>
+<div class="local-head"><h2 id="local-edits-heading">Your own edits</h2><div class="actions"><button id="add-local">Add a local edit</button><input id="local-file" type="file" accept=".ss,.zip" multiple hidden></div></div>
+<div class="local-folder"><p><span class="muted">Default folder</span> <strong id="local-folder-name">None chosen</strong> <span id="local-folder-hint" class="muted"></span></p><div class="actions"><button id="local-folder-change">Choose folder</button><button id="local-folder-refresh" hidden>Refresh</button><button id="local-folder-allow" hidden>Allow access</button></div></div>
+<p id="local-check" class="muted" role="status" aria-live="polite"></p>
+<div id="local-drop" class="drop-zone" tabindex="-1">Drop <code>.ss</code> or <code>.zip</code> edit files here</div>
+<div id="local-progress" hidden><p id="local-progress-text"></p><progress id="local-progress-bar" max="100" aria-label="Checking the local edit"></progress><button id="local-cancel" type="button" hidden>Cancel</button></div>
+<div class="table-wrap"><table id="local-edits"><thead><tr><th>Edit</th><th>Show</th><th>Size</th><th>Last watched</th><th>Status</th><th><span class="sr-only">Actions</span></th></tr></thead><tbody></tbody></table></div>
+<p id="local-empty" class="muted" hidden>No local edits yet. Add a <code>.ss</code> file, or drop one here.</p>
+<ul id="local-report" class="muted" hidden></ul>
+<h2>Local settings</h2>
+<p id="local-space" class="muted"></p>
+<label>Space for local edits (separate from website edits; never cleared automatically)<select data-preference="localBudgetBytes" data-number="true"><option value="1000000000">1 GB</option><option value="2000000000">2 GB</option><option value="5000000000">5 GB</option><option value="10000000000">10 GB</option><option value="20000000000">20 GB</option><option value="50000000000">50 GB</option></select></label>
+<label>Check the default folder for new files when you open the Local tab<input type="checkbox" data-preference="localAutoCheck"></label>
+<label>Unsigned files<select data-preference="unverifiedFiles"><option value="allow">Allow</option><option value="ask">Ask each time</option><option value="block">Block</option></select></label>
+<label>Keep the older copy when a newer revision of the same edit is added<input type="checkbox" data-preference="keepBothRevisions"></label>
+<p class="muted">Removing a file from the folder keeps its copy here; remove it in this list.</p>
+</section>
+
+<section data-tab-panel="advanced" aria-labelledby="advanced-heading"><h1 id="advanced-heading">Advanced</h1>
+<label>Advanced mode (developer panel on the player<!-- @creator -->, creator research tools<!-- /@creator -->)<input type="checkbox" data-preference="advanced"></label>
+<label>Show the Local tab (edits from .ss files; off also hides them in the player)<input type="checkbox" data-preference="showLocal"></label>
+<label id="target-label" hidden>Player<select id="target-tab"></select></label>
+<h2>Scene timing</h2>
+<label>Record scene timing (frame timings only, no titles or account data)<input type="checkbox" data-preference="timing"></label>
+<p class="muted">Turn this on, play through a few scenes, then copy or save the report and send it to the Seamless Scene team. While it records, a small colored square in the video's top-left corner marks each scene change, so a screen recording can be matched to the report.</p>
+<label>Exit reveal<select data-preference="exitReveal" aria-describedby="exit-reveal-help"><option value="precise">Precise (recommended): on the frame at the join, timed to the scene's end</option><option value="new">New: on the episode's first new frame</option><option value="previous">Previous: the original method</option></select></label>
+<p id="exit-reveal-help" class="muted">How the episode reappears when an edited scene ends. Keep Precise, the default, unless you are comparing methods. The timing report records which one each scene used.</p>
+<label>Short-gap priming (prepare the next scene during the previous one when the episode shows for under half a second between them)<input type="checkbox" data-preference="shortGapPriming"></label>
+<div class="actions"><button id="copy-timing">Copy scene timing report</button><button id="save-timing">Save scene timing report</button></div>
+<p id="timing-status" class="note" role="status" aria-live="polite"></p>
+<h2>Diagnostics</h2>
+<div class="actions"><button id="copy-diagnostics">Copy diagnostics (no personal data)</button><button id="save-diagnostics">Save diagnostics</button></div>
+<h2>About this build</h2><dl id="build"></dl><div class="actions"><button id="copy-build">Copy build ID</button><button id="player" hidden>Open test player</button></div>
+<h2>Reset</h2><button id="reset">Reset all settings…</button>
+<div id="reset-confirm" class="confirm" role="group" aria-labelledby="reset-title" hidden><p id="reset-title"><strong>Reset all settings?</strong></p><p>This puts back every setting on every tab to its default. Your downloaded edits, local edits, chosen folders and account connection stay.</p><div class="actions"><button id="reset-yes" class="danger">Reset settings</button><button id="reset-no">Cancel</button></div></div>
+</section>
+</main></div><script type="module" src="viewer.mjs"></script><script type="module" src="edits-page.mjs"></script></body></html>

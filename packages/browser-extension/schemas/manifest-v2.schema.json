@@ -1,0 +1,422 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://scene-substitution.invalid/schemas/manifest-v2.schema.json",
+  "title": "Signed catalog manifest v2",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "edit_id",
+    "manifest_version",
+    "status",
+    "source",
+    "compatibility",
+    "segments",
+    "feature_flags",
+    "content",
+    "signature"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "2.0.0"
+    },
+    "edit_id": {
+      "$ref": "#/$defs/id"
+    },
+    "manifest_version": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 2147483647
+    },
+    "status": {
+      "const": "released"
+    },
+    "source": {
+      "$ref": "#/$defs/source"
+    },
+    "compatibility": {
+      "$ref": "#/$defs/compatibility"
+    },
+    "segments": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 200,
+      "items": {
+        "$ref": "#/$defs/segment"
+      }
+    },
+    "feature_flags": {
+      "$ref": "#/$defs/featureFlags"
+    },
+    "content": {
+      "$ref": "#/$defs/content"
+    },
+    "rights": {
+      "$ref": "#/$defs/rights"
+    },
+    "signature": {
+      "$ref": "#/$defs/signature"
+    }
+  },
+  "$defs": {
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9][a-z0-9._-]{0,127}$"
+    },
+    "source": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "service",
+        "territory",
+        "service_content_id",
+        "title",
+        "season",
+        "episode",
+        "expected_runtime_ms",
+        "runtime_tolerance_ms",
+        "service_tier",
+        "version_tag"
+      ],
+      "properties": {
+        "service": {
+          "$ref": "#/$defs/id"
+        },
+        "territory": {
+          "anyOf": [
+            {
+              "const": "fixture"
+            },
+            {
+              "type": "string",
+              "pattern": "^[A-Z]{2}$"
+            }
+          ]
+        },
+        "service_content_id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 256
+        },
+        "title": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 256
+        },
+        "season": {
+          "anyOf": [
+            {
+              "type": "null"
+            },
+            {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 10000
+            }
+          ]
+        },
+        "episode": {
+          "anyOf": [
+            {
+              "type": "null"
+            },
+            {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 10000
+            }
+          ]
+        },
+        "expected_runtime_ms": {
+          "type": "integer",
+          "minimum": 1000,
+          "maximum": 86400000
+        },
+        "runtime_tolerance_ms": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 5000
+        },
+        "service_tier": {
+          "$ref": "#/$defs/id"
+        },
+        "version_tag": {
+          "anyOf": [
+            {
+              "type": "null"
+            },
+            {
+              "$ref": "#/$defs/id"
+            }
+          ]
+        }
+      }
+    },
+    "compatibility": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "min_adapter_version",
+        "max_adapter_version",
+        "verified_at"
+      ],
+      "properties": {
+        "min_adapter_version": {
+          "type": "string",
+          "maxLength": 32,
+          "pattern": "^(0|[1-9]\\d*)\\.(0|[1-9]\\d*)\\.(0|[1-9]\\d*)$"
+        },
+        "max_adapter_version": {
+          "type": "string",
+          "maxLength": 32,
+          "pattern": "^(?:(0|[1-9]\\d*)\\.(0|[1-9]\\d*)\\.(0|[1-9]\\d*)|(0|[1-9]\\d*)(?:\\.(0|[1-9]\\d*))?\\.x)$"
+        },
+        "verified_at": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "^\\d{4}-(?:0[1-9]|1[0-2])-(?:0[1-9]|[12]\\d|3[01])[tT](?:[01]\\d|2[0-3]):[0-5]\\d:(?:[0-5]\\d|60)(?:\\.\\d+)?(?:[zZ]|[+-](?:[01]\\d|2[0-3]):[0-5]\\d)$"
+        }
+      }
+    },
+    "asset": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "sha256",
+        "expected_duration_ms",
+        "container",
+        "video_codec",
+        "audio_codec",
+        "width",
+        "height",
+        "dynamic_range"
+      ],
+      "properties": {
+        "sha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "expected_duration_ms": {
+          "type": "integer",
+          "minimum": 1500,
+          "maximum": 120000
+        },
+        "container": {
+          "const": "video/mp4"
+        },
+        "video_codec": {
+          "const": "avc1"
+        },
+        "audio_codec": {
+          "const": "mp4a"
+        },
+        "width": {
+          "multipleOf": 2,
+          "maximum": 4096,
+          "minimum": 320,
+          "type": "integer"
+        },
+        "height": {
+          "multipleOf": 2,
+          "maximum": 2160,
+          "minimum": 180,
+          "type": "integer"
+        },
+        "dynamic_range": {
+          "const": "sdr"
+        }
+      }
+    },
+    "transition": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "type"
+      ],
+      "properties": {
+        "type": {
+          "const": "hard_cut"
+        },
+        "gain_db": {
+          "type": "integer",
+          "minimum": -24,
+          "maximum": 6
+        }
+      }
+    },
+    "segment": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "segment_id",
+        "action",
+        "trigger_time_ms",
+        "resume_time_ms",
+        "asset",
+        "transition",
+        "failure_policy"
+      ],
+      "properties": {
+        "segment_id": {
+          "$ref": "#/$defs/id"
+        },
+        "action": {
+          "enum": [
+            "REPLACE",
+            "INSERT",
+            "SKIP",
+            "MUTE"
+          ]
+        },
+        "trigger_time_ms": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "resume_time_ms": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "asset": {
+          "anyOf": [
+            {
+              "type": "null"
+            },
+            {
+              "$ref": "#/$defs/asset"
+            }
+          ]
+        },
+        "transition": {
+          "$ref": "#/$defs/transition"
+        },
+        "failure_policy": {
+          "const": "continue_native"
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "action": {
+                "enum": [
+                  "REPLACE",
+                  "INSERT"
+                ]
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "asset": {
+                "$ref": "#/$defs/asset"
+              }
+            }
+          },
+          "else": {
+            "properties": {
+              "asset": {
+                "type": "null"
+              }
+            }
+          }
+        }
+      ]
+    },
+    "featureFlags": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "replace_enabled",
+        "insert_enabled",
+        "skip_enabled",
+        "mute_enabled",
+        "emergency_disable"
+      ],
+      "properties": {
+        "replace_enabled": {
+          "type": "boolean"
+        },
+        "insert_enabled": {
+          "type": "boolean"
+        },
+        "skip_enabled": {
+          "type": "boolean"
+        },
+        "mute_enabled": {
+          "type": "boolean"
+        },
+        "emergency_disable": {
+          "type": "boolean"
+        }
+      }
+    },
+    "content": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "spoilers",
+        "warnings"
+      ],
+      "properties": {
+        "spoilers": {
+          "type": "boolean"
+        },
+        "warnings": {
+          "type": "array",
+          "maxItems": 32,
+          "items": {
+            "type": "string",
+            "maxLength": 128
+          }
+        },
+        "synthetic_media": {
+          "type": "boolean"
+        },
+        "real_person_likeness": {
+          "type": "boolean"
+        }
+      }
+    },
+    "rights": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "classification",
+        "approval_reference"
+      ],
+      "properties": {
+        "classification": {
+          "enum": [
+            "cleared-test",
+            "public-domain",
+            "licensed"
+          ]
+        },
+        "approval_reference": {
+          "$ref": "#/$defs/id"
+        }
+      }
+    },
+    "signature": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "algorithm",
+        "key_id",
+        "value"
+      ],
+      "properties": {
+        "algorithm": {
+          "const": "Ed25519"
+        },
+        "key_id": {
+          "$ref": "#/$defs/id"
+        },
+        "value": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9+/]{86}==$"
+        }
+      }
+    }
+  }
+}
